@@ -603,6 +603,7 @@ async def alive(e):
 @mkk.on(events.NewMessage(incoming=True, pattern=r"\.leave"))
 @sid.on(events.NewMessage(incoming=True, pattern=r"\.leave"))        
 async def _(e):
+    async def _(e):
     usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗟𝗲𝗮𝘃𝗲\n\nCommand:\n\n.leave <Channel or Chat ID>"
     if e.sender_id in SMEX_USERS:
         lovely = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
@@ -645,12 +646,12 @@ async def spam(e):
         if len(yukki) == 2:
             message = str(yukki[1])
             counter = int(yukki[0])
-            if counter > 100:
+            if counter > 5000:
                 return await e.reply(error, parse_mode=None, link_preview=None )
             await asyncio.wait([e.respond(message) for i in range(counter)])
         elif e.reply_to_msg_id and smex.media:  
             counter = int(yukki[0])
-            if counter > 100:
+            if counter > 5000:
                 return await e.reply(error, parse_mode=None, link_preview=None )
             for _ in range(counter):
                 smex = await e.client.send_file(e.chat_id, smex, caption=smex.text)
@@ -658,7 +659,7 @@ async def spam(e):
         elif e.reply_to_msg_id and smex.text:
             message = smex.text
             counter = int(yukki[0])
-            if counter > 100:
+            if counter > 5000:
                 return await e.reply(error, parse_mode=None, link_preview=None )
             await asyncio.wait([e.respond(message) for i in range(counter)])
         else:
@@ -695,21 +696,21 @@ async def spam(e):
                         await smex.reply(message)
                     else:
                         await e.client.send_message(e.chat_id, message)
-                    await asyncio.sleep(0.01)
+                    await asyncio.sleep(0.0001)
         elif e.reply_to_msg_id and smex.media:  
             counter = int(yukki[0])
             for _ in range(counter):
                 async with e.client.action(e.chat_id, "document"):
                     smex = await e.client.send_file(e.chat_id, smex, caption=smex.text)
                     await gifspam(e, smex) 
-                await asyncio.sleep(0.01)  
+                await asyncio.sleep(0.0001)  
         elif e.reply_to_msg_id and smex.text:
             message = smex.text
             counter = int(yukki[0])
             for _ in range(counter):
                 async with e.client.action(e.chat_id, "typing"):
                     await e.client.send_message(e.chat_id, message)
-                    await asyncio.sleep(0.01)
+                    await asyncio.sleep(0.0001)
         else:
             await e.reply(usage, parse_mode=None, link_preview=None )
 
@@ -762,7 +763,7 @@ async def spam(e):
                 caption = f"{username} {reply}"
                 async with e.client.action(e.chat_id, "typing"):
                     await e.client.send_message(e.chat_id, caption)
-                    await asyncio.sleep(0.01)
+                    await asyncio.sleep(0.0001)
         else:
             await e.reply(usage, parse_mode=None, link_preview=None )
 
@@ -791,7 +792,7 @@ async def _(event):
     if not queue:
         return
     async with event.client.action(event.chat_id, "typing"):
-        await asyncio.sleep(0.3)
+        await asyncio.sleep(0.0001)
     async with event.client.action(event.chat_id, "typing"):
         await event.client.send_message(
             entity=event.chat_id,
