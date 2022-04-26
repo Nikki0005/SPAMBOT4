@@ -603,12 +603,12 @@ async def alive(e):
 @mkk.on(events.NewMessage(incoming=True, pattern=r"\.leave"))
 @sid.on(events.NewMessage(incoming=True, pattern=r"\.leave"))        
 async def _(e):
-    async def _(e):
+async def _(e):
     usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗟𝗲𝗮𝘃𝗲\n\nCommand:\n\n.leave <Channel or Chat ID>"
     if e.sender_id in SMEX_USERS:
-        lovely = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
+        ustad = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
         if len(e.text) > 7:
-            bc = lovely[0]
+            bc = ustad[0]
             bc = int(bc)
             text = "☄ 𝗦𝗢𝗢𝗡 𝗕𝗔𝗖𝗞 𝗕𝗦𝗗𝗞 ☄"
             event = await e.reply(text, parse_mode=None, link_preview=None )
@@ -696,21 +696,21 @@ async def spam(e):
                         await smex.reply(message)
                     else:
                         await e.client.send_message(e.chat_id, message)
-                    await asyncio.sleep(0.0001)
+                    await asyncio.sleep(0.001)
         elif e.reply_to_msg_id and smex.media:  
             counter = int(yukki[0])
             for _ in range(counter):
                 async with e.client.action(e.chat_id, "document"):
                     smex = await e.client.send_file(e.chat_id, smex, caption=smex.text)
                     await gifspam(e, smex) 
-                await asyncio.sleep(0.0001)  
+                await asyncio.sleep(0.001)  
         elif e.reply_to_msg_id and smex.text:
             message = smex.text
             counter = int(yukki[0])
             for _ in range(counter):
                 async with e.client.action(e.chat_id, "typing"):
                     await e.client.send_message(e.chat_id, message)
-                    await asyncio.sleep(0.0001)
+                    await asyncio.sleep(0.001)
         else:
             await e.reply(usage, parse_mode=None, link_preview=None )
 
@@ -763,7 +763,7 @@ async def spam(e):
                 caption = f"{username} {reply}"
                 async with e.client.action(e.chat_id, "typing"):
                     await e.client.send_message(e.chat_id, caption)
-                    await asyncio.sleep(0.0001)
+                    await asyncio.sleep(0.001)
         else:
             await e.reply(usage, parse_mode=None, link_preview=None )
 
