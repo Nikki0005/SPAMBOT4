@@ -555,11 +555,11 @@ async def _(e):
         yukki = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
         if len(e.text) > 7:
             bc = yukki[0]
-            text = " 𝗔𝗥𝗛𝗔 𝗛𝗨 𝗧𝗘𝗥𝗜 𝗠𝗔𝗔 𝗖𝗛𝗢𝗗𝗡𝗘 😠🔥"
+            text = " 𝐀𝐑𝐇𝐀 𝐇𝐔 𝐓𝐄𝐑𝐈 𝐌𝐀𝐀 𝐂𝐇𝐎𝐃𝐍𝐄 😠🔥"
             event = await e.reply(text, parse_mode=None, link_preview=None )
             try:
                 await e.client(ImportChatInviteRequest(bc))
-                await event.edit(" 𝗔𝗥𝗛𝗔 𝗛𝗨 𝗧𝗘𝗥𝗜 𝗠𝗔𝗔 𝗖𝗛𝗢𝗗𝗡𝗘 😠🔥")
+                await event.edit(" 𝐀𝐑𝐇𝐀 𝐇𝐔 𝐓𝐄𝐑𝐈 𝐌𝐀𝐀 𝐂𝐇𝐎𝐃𝐍𝐄 😠🔥")
             except Exception as e:
                 await event.edit(str(e))   
         else:
@@ -603,14 +603,13 @@ async def alive(e):
 @mkk.on(events.NewMessage(incoming=True, pattern=r"\.leave"))
 @sid.on(events.NewMessage(incoming=True, pattern=r"\.leave"))        
 async def _(e):
-async def _(e):
     usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗟𝗲𝗮𝘃𝗲\n\nCommand:\n\n.leave <Channel or Chat ID>"
     if e.sender_id in SMEX_USERS:
-        ustad = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
+        yukki = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
         if len(e.text) > 7:
-            bc = ustad[0]
+            bc = yukki[0]
             bc = int(bc)
-            text = "☄ 𝗦𝗢𝗢𝗡 𝗕𝗔𝗖𝗞 𝗕𝗦𝗗𝗞 ☄"
+            text = "☄ 𝗦𝗢𝗢𝗡 𝗕𝗔𝗖𝗞 𝗕𝗦𝗗𝗞 ☄.."
             event = await e.reply(text, parse_mode=None, link_preview=None )
             try:
                 await event.client(LeaveChannelRequest(bc))
@@ -620,23 +619,23 @@ async def _(e):
         else:
             await e.reply(usage, parse_mode=None, link_preview=None )        
         
-@idk.on(events.NewMessage(incoming=True, pattern=r"\.spam"))
-@ydk.on(events.NewMessage(incoming=True, pattern=r"\.spam"))
-@wdk.on(events.NewMessage(incoming=True, pattern=r"\.spam"))
-@hdk.on(events.NewMessage(incoming=True, pattern=r"\.spam"))
-@sdk.on(events.NewMessage(incoming=True, pattern=r"\.spam"))
-@adk.on(events.NewMessage(incoming=True, pattern=r"\.spam"))
-@bdk.on(events.NewMessage(incoming=True, pattern=r"\.spam"))
-@cdk.on(events.NewMessage(incoming=True, pattern=r"\.spam"))
-@ddk.on(events.NewMessage(incoming=True, pattern=r"\.spam"))
-@edk.on(events.NewMessage(incoming=True, pattern=r"\.spam"))
-@vkk.on(events.NewMessage(incoming=True, pattern=r"\.spam"))
-@kkk.on(events.NewMessage(incoming=True, pattern=r"\.spam"))
-@lkk.on(events.NewMessage(incoming=True, pattern=r"\.spam"))
-@mkk.on(events.NewMessage(incoming=True, pattern=r"\.spam"))
-@sid.on(events.NewMessage(incoming=True, pattern=r"\.spam"))
+@idk.on(events.NewMessage(incoming=True, pattern=r"\.xs"))
+@ydk.on(events.NewMessage(incoming=True, pattern=r"\.xs"))
+@wdk.on(events.NewMessage(incoming=True, pattern=r"\.xs"))
+@hdk.on(events.NewMessage(incoming=True, pattern=r"\.xs"))
+@sdk.on(events.NewMessage(incoming=True, pattern=r"\.xs"))
+@adk.on(events.NewMessage(incoming=True, pattern=r"\.xs"))
+@bdk.on(events.NewMessage(incoming=True, pattern=r"\.xs"))
+@cdk.on(events.NewMessage(incoming=True, pattern=r"\.xs"))
+@ddk.on(events.NewMessage(incoming=True, pattern=r"\.xs"))
+@edk.on(events.NewMessage(incoming=True, pattern=r"\.xs"))
+@vkk.on(events.NewMessage(incoming=True, pattern=r"\.xs"))
+@kkk.on(events.NewMessage(incoming=True, pattern=r"\.xs"))
+@lkk.on(events.NewMessage(incoming=True, pattern=r"\.xs"))
+@mkk.on(events.NewMessage(incoming=True, pattern=r"\.xs"))
+@sid.on(events.NewMessage(incoming=True, pattern=r"\.xs"))
 async def spam(e):
-    usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗦𝗽𝗮𝗺\n\nCommand:\n\n.spam <count> <message to spam>\n\n.spam <count> <reply to a message>\n\nCount must be a integer."
+    usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗦𝗽𝗮𝗺\n\nCommand:\n\n.xs <count> <message to spam>\n\n.xs <count> <reply to a message>\n\nCount must be a integer."
     error = "Spam Module can only be used till 100 count. For bigger spams use BigSpam."
     if e.sender_id in SMEX_USERS:
         if e.text[0].isalpha() and e.text[0] in ("/", "#", "@", "!"):
@@ -689,7 +688,7 @@ async def spam(e):
         smex = await e.get_reply_message()
         if len(yukki) == 2:
             message = str(yukki[1])
-            counter = int(yukki[0])
+            counter = int(yukki[5])
             for _ in range(counter):
                 async with e.client.action(e.chat_id, "typing"):
                     if e.reply_to_msg_id:
@@ -698,7 +697,7 @@ async def spam(e):
                         await e.client.send_message(e.chat_id, message)
                     await asyncio.sleep(0.001)
         elif e.reply_to_msg_id and smex.media:  
-            counter = int(yukki[0])
+            counter = int(yukki[5])
             for _ in range(counter):
                 async with e.client.action(e.chat_id, "document"):
                     smex = await e.client.send_file(e.chat_id, smex, caption=smex.text)
@@ -706,7 +705,7 @@ async def spam(e):
                 await asyncio.sleep(0.001)  
         elif e.reply_to_msg_id and smex.text:
             message = smex.text
-            counter = int(yukki[0])
+            counter = int(yukki[5])
             for _ in range(counter):
                 async with e.client.action(e.chat_id, "typing"):
                     await e.client.send_message(e.chat_id, message)
@@ -750,7 +749,7 @@ async def spam(e):
                 caption = f"{username} {reply}"
                 async with e.client.action(e.chat_id, "typing"):
                     await e.client.send_message(e.chat_id, caption)
-                    await asyncio.sleep(0.01)
+                    await asyncio.sleep(0.001)
         elif e.reply_to_msg_id:             
             a = await e.get_reply_message()
             b = await e.client.get_entity(a.sender_id)
@@ -792,7 +791,7 @@ async def _(event):
     if not queue:
         return
     async with event.client.action(event.chat_id, "typing"):
-        await asyncio.sleep(0.0001)
+        await asyncio.sleep(0.001)
     async with event.client.action(event.chat_id, "typing"):
         await event.client.send_message(
             entity=event.chat_id,
