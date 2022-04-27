@@ -1019,11 +1019,11 @@ async def help(e):
     
         
 text = """
-𓆩𝘿𝘼𝙆𝙐〆𝙀𝙉𝙂𝙄𝙉𝙀𝙀𝙍𓆪 """
+𓆩𝙍.𝙊𝙉𝙀༒︎𝙍𝙊𝘾𝙆𝙀𝙏𓆪 """
 
 print(text)
 print("")
-print("SMEX! 𓆩𝘿𝘼𝙆𝙐〆𝙀𝙉𝙂𝙄𝙉𝙀𝙀𝙍𓆪 Multi Spam Bot Started Sucessfully.")
+print("SMEX! 𓆩𝙍.𝙊𝙉𝙀 ༒︎𝙍𝙊𝘾𝙆𝙀𝙏𓆪 Multi Spam Bot Started Sucessfully.")
 if len(sys.argv) not in (1, 3, 4):
     try:
         idk.disconnect()
